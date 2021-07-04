@@ -22,9 +22,7 @@
     <div>Descrição</div>
     <div>
       <label for-id="descriptionProduct" class="sr-only">Descrição do produto</label>
-      <textarea name="description" id="descriptionProduct">
-          {{ product.description }}
-      </textarea>
+      <textarea name="description" id="descriptionProduct">{{ product.description }}</textarea>
     </div>
 </div>
 
@@ -34,7 +32,7 @@
     <div>Valor</div>
     <div>
       <label for-id="priceProduct" class="sr-only">Preço do produto</label>
-      <input type="text" id="priceProduct" name="price" placeholder="Preço do produto" value="{{ product.price }}">
+      <input type="text" id="priceProduct" name="price" placeholder="Preço do produto" value="{{ product.price }}" onkeydown="Mask.apply(this, 'formatBRL')">
     </div>
 
     {% if product.old_price%}
